@@ -1,1 +1,1 @@
-flask --app ./app/services run --host=0.0.0.0 --port 591 --debug & > logs.txt 
+flask --app ./app/services run --host=0.0.0.0 --port 8000 --debug & > logs.txt 
