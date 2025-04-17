@@ -14,7 +14,7 @@ def index():
 @app.route("/doorbell/")
 def ring_doorbell():
     global last_time
-    if time.time() - last_time < 1:
+    if time.time() - last_time < 60:
         return jsonify({'message': 'Time Out', 'status': 408})
     last_time = time.time()
     wave_obj = sa.WaveObject.from_wave_file("app/doorbell-223669.wav")
