@@ -10,9 +10,11 @@ last_time = time.time()
 def index():
     return render_template("index.html")
 
+
 @app.route("/doorbell/")
 def ring_doorbell():
-    if time.time() - last_time() > 1:
+    global last_time
+    if time.time() - last_time > 1:
         return
     last_time = time.time()
     wave_obj = sa.WaveObject.from_wave_file("app/doorbell-223669.wav")
